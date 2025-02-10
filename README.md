@@ -125,7 +125,7 @@ cfg := &scalibr.ScanConfig{
   ScanRoots: scalibrfs.RealFSScanRoots("/"),
   Plugins:   plugins,
 }
-results := scalibr.New().Scan(context.Background(), cfg)
+results := scalibr.New().Scan(t.Context(), cfg)
 ```
 
 You can also specify your scanning host's capabilities to only enable plugins
@@ -168,7 +168,7 @@ cfg := &scalibr.ScanConfig{
   Root:                 "/",
   Plugins: []plugin.Plugin{&myExtractor{}},
 }
-results := scalibr.New().Scan(context.Background(), cfg)
+results := scalibr.New().Scan(t.Context(), cfg)
 ```
 
 ### A note on cross-platform
@@ -208,7 +208,7 @@ import (
 )
 cfg := &scalibr.ScanConfig{ScanRoot: "/"}
 log.SetLogger(&customlog.Logger{})
-results := scalibr.New().Scan(context.Background(), cfg)
+results := scalibr.New().Scan(t.Context(), cfg)
 log.Info(results)
 ```
 
